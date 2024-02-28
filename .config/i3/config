@@ -15,6 +15,15 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:monospace 8
 
+# Color Settings
+# class                 border  bground text    indicator child_border
+client.focused          #A7C080 #A7C080 #2D353B #A7C080   #A7C080
+client.focused_inactive #3D484D #2D353B #859289 #3D484D   #3D484D
+client.unfocused        #3D484D #2D353B #859289 #3D484D   #3D484D
+client.urgent           #E67E80 #E67E80 #2D353B #E67E80   #E67E80
+client.placeholder      #2D353B #2D353B #859289 #2D353B   #2D353B
+client.background       #2D353B
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
