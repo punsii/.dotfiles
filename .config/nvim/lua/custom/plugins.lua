@@ -19,6 +19,22 @@ local plugins = {
 		},
 	},
 	{
+		"nvim-tree/nvim-tree.lua",
+		opts = {
+      git = {
+        enable = true
+      },
+      renderer = {
+        highlight_git = "name",
+        icons = {
+          show = {
+            git = true
+          },
+        },
+      },
+		},
+	},
+	{
 		"kylechui/nvim-surround",
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
 		event = "VeryLazy",
@@ -100,6 +116,10 @@ local plugins = {
 			require("custom.configs.lspconfig")
 		end,
 	},
+  {
+    "sindrets/diffview.nvim",
+		event = "VeryLazy",
+  },
 }
 
 return plugins
