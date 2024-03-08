@@ -6,6 +6,12 @@ M.telescope = {
 	},
 }
 
+M.diffView = {
+	n = {
+		["<leader>gd"] = { "<cmd> DiffviewOpen <CR>", "Open Diff View" },
+	},
+}
+
 M.gitsigns = {
 	n = {
 		["<leader>sh"] = {
