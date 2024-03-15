@@ -21,17 +21,17 @@ local plugins = {
 	{
 		"nvim-tree/nvim-tree.lua",
 		opts = {
-      git = {
-        enable = true
-      },
-      renderer = {
-        highlight_git = "name",
-        icons = {
-          show = {
-            git = true
-          },
-        },
-      },
+			git = {
+				enable = true,
+			},
+			renderer = {
+				highlight_git = "name",
+				icons = {
+					show = {
+						git = true,
+					},
+				},
+			},
 		},
 	},
 	{
@@ -116,10 +116,10 @@ local plugins = {
 			require("custom.configs.lspconfig")
 		end,
 	},
-  {
-    "sindrets/diffview.nvim",
+	{
+		"sindrets/diffview.nvim",
 		event = "VeryLazy",
-  },
+	},
 }
 
 return plugins
