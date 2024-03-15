@@ -15,6 +15,7 @@ local plugins = {
 				"svelte",
 				"typescript",
 				"vim",
+				"vue",
 			},
 		},
 	},
@@ -88,6 +89,9 @@ local plugins = {
 			"nix",
 			"python",
 			"rust",
+			"css",
+			"typescript",
+			"vue",
 		},
 		opts = function()
 			return require("custom.configs.null-ls")
@@ -106,6 +110,8 @@ local plugins = {
 				"ruff",
 				"rust-analyzer",
 				"stylua",
+				"vue-language-server",
+				"vtsls",
 			},
 		},
 	},

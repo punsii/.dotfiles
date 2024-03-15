@@ -21,6 +21,7 @@ lspconfig.rust_analyzer.setup({
 		["rust_analyzer"] = {},
 	},
 })
-
+lspconfig.volar.setup({})
+lspconfig.vtsls.setup({})
 lspconfig.svelte.setup({})
 lspconfig.nil_ls.setup({})

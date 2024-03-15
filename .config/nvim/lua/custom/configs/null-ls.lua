@@ -13,7 +13,6 @@ local opts = {
 
 		null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.isort,
-		null_ls.builtins.formatting.leptosfmt,
 		null_ls.builtins.formatting.treefmt.with({
 			-- treefmt requires a config file
 			condition = function(utils)
