@@ -3,6 +3,8 @@ local plugins = {
 		"nvim-treesitter/nvim-treesitter",
 		opts = {
 			ensure_installed = {
+        "c",
+        "vimdoc",
 				"css",
 				"go",
 				"html",
@@ -106,6 +108,7 @@ local plugins = {
 				"debugpy",
 				"mypy",
 				"nil",
+        "isort",
 				"pyright",
 				"ruff-lsp",
 				"rust-analyzer",
