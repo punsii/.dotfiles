@@ -107,7 +107,7 @@ local plugins = {
 				"mypy",
 				"nil",
 				"pyright",
-				"ruff",
+				"ruff-lsp",
 				"rust-analyzer",
 				"stylua",
 				"vue-language-server",

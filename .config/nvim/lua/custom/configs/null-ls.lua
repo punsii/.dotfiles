@@ -6,9 +6,8 @@ local opts = {
 		null_ls.builtins.code_actions.statix,
 
 		-- null_ls.builtins.diagnostics.mypy,
-		-- null_ls.builtins.diagnostics.ruff,
 		null_ls.builtins.diagnostics.deadnix,
-		null_ls.builtins.diagnostics.pylint,
+		-- null_ls.builtins.diagnostics.pylint,
 		null_ls.builtins.diagnostics.statix,
 
 		null_ls.builtins.formatting.black,
