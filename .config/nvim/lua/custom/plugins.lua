@@ -3,8 +3,8 @@ local plugins = {
 		"nvim-treesitter/nvim-treesitter",
 		opts = {
 			ensure_installed = {
-        "c",
-        "vimdoc",
+				"c",
+				"vimdoc",
 				"css",
 				"go",
 				"html",
@@ -46,17 +46,17 @@ local plugins = {
 				-- Configuration here, or leave empty to use defaults
 			})
 		end,
-  },
-  {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    build = "cd app && yarn install",
-    init = function()
-      vim.g.mkdp_filetypes = { "markdown" }
-    end,
-    ft = { "markdown" },
-  },
-  {
+	},
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		build = "cd app && yarn install",
+		init = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	},
+	{
 		"rcarriga/nvim-dap-ui",
 		dependencies = "mfussenegger/nvim-dap",
 		config = function()
@@ -96,13 +96,7 @@ local plugins = {
 	{
 		"nvimtools/none-ls.nvim",
 		ft = {
-			"lua",
-			"nix",
-			"python",
-			"rust",
-			"css",
-			"typescript",
-			"vue",
+			"*",
 		},
 		opts = function()
 			return require("custom.configs.null-ls")
@@ -117,13 +111,14 @@ local plugins = {
 				"debugpy",
 				"mypy",
 				"nil",
-        "isort",
 				"pyright",
 				"ruff-lsp",
 				"rust-analyzer",
 				"stylua",
-				"vue-language-server",
 				"vtsls",
+				"vue-language-server",
+				"isort",
+				"prettierd",
 			},
 		},
 	},
