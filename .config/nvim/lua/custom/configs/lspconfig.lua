@@ -30,3 +30,4 @@ lspconfig.rust_analyzer.setup({
 -- lspconfig.vtsls.setup({})
 lspconfig.svelte.setup({})
 lspconfig.nil_ls.setup({})
+lspconfig.lua_ls.setup({ capabilities = "" })

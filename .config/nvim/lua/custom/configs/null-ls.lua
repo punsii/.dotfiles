@@ -10,17 +10,17 @@ local opts = {
 		-- null_ls.builtins.diagnostics.pylint,
 		null_ls.builtins.diagnostics.statix,
 
-		null_ls.builtins.formatting.black,
-		null_ls.builtins.formatting.isort,
-		null_ls.builtins.formatting.prettierd,
+		-- null_ls.builtins.formatting.black,
+		-- null_ls.builtins.formatting.isort,
+		-- null_ls.builtins.formatting.prettierd,
 		null_ls.builtins.formatting.treefmt.with({
 			-- treefmt requires a config file
-			condition = function(utils)
-				return utils.root_has_file("treefmt.toml")
-			end,
+			-- condition = function(utils)
+			-- 	return utils.root_has_file("treefmt.toml")
+			-- end,
 		}),
-		null_ls.builtins.formatting.nixpkgs_fmt,
-		null_ls.builtins.formatting.stylua,
+		-- null_ls.builtins.formatting.nixpkgs_fmt,
+		-- null_ls.builtins.formatting.stylua,
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
