@@ -1,3 +1,4 @@
+HOME = os.getenv("HOME")
 local config = require("plugins.configs.lspconfig")
 
 local on_attach = config.on_attach
@@ -26,7 +27,25 @@ lspconfig.rust_analyzer.setup({
 		["rust_analyzer"] = {},
 	},
 })
--- lspconfig.volar.setup({}) XXX fix formatting issues
+
+lspconfig.tsserver.setup({
+	init_options = {
+		plugins = {
+			{
+				name = "@vue/typescript-plugin",
+				location = HOME .. "/.npm-packages/lib/node_modules/@vue/typescript-plugin/",
+				languages = { "javascript", "typescript", "vue" },
+			},
+		},
+	},
+	filetypes = {
+		"javascript",
+		"typescript",
+		"vue",
+	},
+})
+lspconfig.volar.setup( {})
+
 -- lspconfig.vtsls.setup({})
 lspconfig.svelte.setup({})
 lspconfig.nil_ls.setup({})
