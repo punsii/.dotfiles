@@ -81,4 +81,21 @@ M.theme = {
 	},
 }
 
+-- XXX Overwrites the default mapping
+-- M.general = {
+-- 	n = {
+-- 		["<leader>fm"] = {
+-- 			function()
+-- 				vim.lsp.buf.format({
+-- 					async = true,
+-- 					filter = function(client)
+-- 						return client.name == "null-ls"
+-- 					end,
+-- 				})
+-- 			end,
+-- 			"LSP formatting",
+-- 		},
+-- 	},
+
+
 return M

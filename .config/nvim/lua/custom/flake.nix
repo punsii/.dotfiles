@@ -27,8 +27,8 @@
         mkShell {
           buildInputs = [
             treefmtEval.config.build.wrapper
+            lua-language-server
           ];
         };
-
     };
 }

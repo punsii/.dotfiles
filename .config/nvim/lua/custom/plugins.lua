@@ -121,11 +121,11 @@ local plugins = {
 				"ruff-lsp",
 				"rust-analyzer",
 				"stylua",
-				"vtsls",
-				"vue-language-server",
 				"isort",
 				"prettierd",
 			},
+			-- "vtsls",
+			-- "vue-language-server",
 		},
 	},
 	{
