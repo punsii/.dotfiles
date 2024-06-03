@@ -2,60 +2,29 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
-map(
-  {"n"},
-  "<leader>fk",
-  "<cmd> Telescope keymaps <CR>",
-  {desc = "Find keymaps"}
-)
+map({ "n" }, "<leader>fk", "<cmd> Telescope keymaps <CR>", { desc = "Find keymaps" })
 
-map(
-  {"n"},
-  "<leader>gd",
-  function()
-    if next(require("diffview.lib").views) == nil then
-      vim.cmd("DiffviewOpen")
-    else
-      vim.cmd("DiffviewClose")
-    end
-  end,
-  {desc = "Goto Definition"}
-)
+map({ "n" }, "<leader>gd", function()
+  if next(require("diffview.lib").views) == nil then
+    vim.cmd "DiffviewOpen"
+  else
+    vim.cmd "DiffviewClose"
+  end
+end, { desc = "Goto Definition" })
 
-map(
-  {"n"},
-  "<leader>sh",
-  function()
-    require("gitsigns").stage_hunk()
-  end,
-  {desc = "Stage hunk"}
-)
+map({ "n" }, "<leader>sh", function()
+  require("gitsigns").stage_hunk()
+end, { desc = "Stage hunk" })
+map({ "n" }, "<leader>uh", function()
+  require("gitsigns").undo_stage_hunk()
+end, { desc = "Unstage hunk" })
 
-map(
-  {"n"},
-  "<leader>uh",
-  function()
-    require("gitsigns").undo_stage_hunk()
-  end,
-  {desc = "Unstage hunk"}
-)
-
-map(
-  {"n"},
-  "<leader>sh",
-  function()
-    require("gitsigns").stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-  end,
-  {desc =	"Stage hunk"}
-)
-map(
-  {"n"},
-  "<leader>uh",
-  function()
-    require("gitsigns").undo_stage_hunk()
-  end,
-  {desc =	"Unstage hunk"}
-)
+map({ "v" }, "<leader>sh", function()
+  require("gitsigns").stage_hunk { vim.fn.line ".", vim.fn.line "v" }
+end, { desc = "Stage hunk" })
+map({ "v" }, "<leader>uh", function()
+  require("gitsigns").undo_stage_hunk()
+end, { desc = "Unstage hunk" })
 --XXX how is the plugin setting used after 2.5?
 --M.dap = {
 --	plugin = true,
@@ -91,14 +60,9 @@ map(
 -- 			"LSP formatting",
 -- 		},
 -- 	},
-map(
-  {"n"},
-  "<leader>tt",
-			function()
-				require("base46").toggle_theme()
-			end,
-  {desc = "Toggle Theme"}
-)
+map({ "n" }, "<leader>tt", function()
+  require("base46").toggle_theme()
+end, { desc = "Toggle Theme" })
 
 --map("i", "<C-k>", "<Up>", { desc = "Move up" })
 --
