@@ -105,7 +105,7 @@ local plugins = {
 			"*",
 		},
 		opts = function()
-			return require("custom.configs.null-ls")
+			return require("configs.null-ls")
 		end,
 	},
 	{
@@ -132,7 +132,7 @@ local plugins = {
 		"neovim/nvim-lspconfig",
 		config = function()
 			require("plugins.configs.lspconfig")
-			require("custom.configs.lspconfig")
+			require("configs.lspconfig")
 		end,
 	},
 	{

@@ -1,10 +1,10 @@
 ---@type ChadrcConfig
-require("custom.autocmds")
+require("autocmds")
 
 local M = {}
 
-M.mappings = require("custom.mappings")
-M.plugins = "custom.plugins"
+M.mappings = require("mappings")
+M.plugins = "plugins"
 M.ui = {
 	theme = "everforest",
 	tabufline = {
