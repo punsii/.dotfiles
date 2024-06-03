@@ -1,5 +1,5 @@
 HOME = os.getenv("HOME")
-local config = require("plugins.configs.lspconfig")
+local config = require('nvchad.configs.lspconfig').defaults()
 
 local on_attach = config.on_attach
 local capabilities = config.capabilities
