@@ -12,19 +12,24 @@ map({ "n" }, "<leader>gd", function()
   end
 end, { desc = "Goto Definition" })
 
-map({ "n" }, "<leader>sh", function()
+-- working with hunks
+map({ "o", "x" }, "ah", ":<C-U>Gitsigns select_hunk<CR>")
+map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
+map({ "n" }, "<leader>gs", function()
   require("gitsigns").stage_hunk()
-end, { desc = "Stage hunk" })
-map({ "n" }, "<leader>uh", function()
-  require("gitsigns").undo_stage_hunk()
-end, { desc = "Unstage hunk" })
-
-map({ "v" }, "<leader>sh", function()
+end, { desc = "Git stage hunk" })
+map({ "v" }, "<leader>gs", function()
   require("gitsigns").stage_hunk { vim.fn.line ".", vim.fn.line "v" }
-end, { desc = "Stage hunk" })
-map({ "v" }, "<leader>uh", function()
+end, { desc = "Git stage hunk" })
+map({ "n", "v" }, "<leader>gu", function()
   require("gitsigns").undo_stage_hunk()
-end, { desc = "Unstage hunk" })
+end, { desc = "Git unstage hunk" })
+map({ "n", "v" }, "<leader>gr", function()
+  require("gitsigns").reset_hunk()
+end, { desc = "Git reset hunk" })
+map({ "n", "v" }, "<leader>gp", function()
+  require("gitsigns").preview_hunk()
+end, { desc = "Git preview hunk" })
 --XXX how is the plugin setting used after 2.5?
 --M.dap = {
 --	plugin = true,
