@@ -22,6 +22,10 @@ local plugins = {
     },
   },
   {
+    "tpope/vim-fugitive",
+    cmd = "G",
+  },
+  {
     "nvim-tree/nvim-tree.lua",
     opts = {
       git = {
