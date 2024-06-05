@@ -1,14 +1,26 @@
 HOME = os.getenv "HOME"
-local config = require("nvchad.configs.lspconfig").defaults()
-
-local on_attach = require("nvchad.configs.lspconfig").on_attach
-local on_init = require("nvchad.configs.lspconfig").on_init
-local capabilities = require("nvchad.configs.lspconfig").capabilities
+local config = require "nvchad.configs.lspconfig"
 
 local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 
-local servers = { "html", "cssls" }
+local on_attach = config.on_attach
+local on_init = config.on_init
+local capabilities = config.capabilities
+
+local servers = {
+  "lua_ls",
+
+  "pyright",
+  "ruff_lsp",
+
+  --"svelete",
+  "volar",
+  "html",
+  "cssls",
+
+  "nil_ls",
+}
 -- lsps with default config
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -17,19 +29,6 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
-
-lspconfig.pyright.setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-  filetypes = { "python" },
-}
-lspconfig.ruff_lsp.setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-  filetypes = { "python" },
-}
 
 lspconfig.rust_analyzer.setup {
   on_attach = on_attach,
@@ -60,27 +59,4 @@ lspconfig.tsserver.setup {
     "typescript",
     "vue",
   },
-}
-lspconfig.volar.setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-}
-
--- lspconfig.vtsls.setup({})
-lspconfig.svelte.setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-}
-lspconfig.nil_ls.setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-}
-lspconfig.lua_ls.setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = "",
-  -- capabilities = capabilities,
 }
