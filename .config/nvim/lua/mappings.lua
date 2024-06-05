@@ -64,6 +64,22 @@ map({ "n" }, "<leader>tt", function()
   require("base46").toggle_theme()
 end, { desc = "Toggle Theme" })
 
+map("n", "]c", function()
+  if vim.wo.diff then
+    vim.cmd.normal { "]c", bang = true }
+  else
+    require("gitsigns").nav_hunk "next"
+  end
+end)
+
+map("n", "[c", function()
+  if vim.wo.diff then
+    vim.cmd.normal { "[c", bang = true }
+  else
+    require("gitsigns").nav_hunk "prev"
+  end
+end)
+
 --map("i", "<C-k>", "<Up>", { desc = "Move up" })
 --
 ---- multiple modes
