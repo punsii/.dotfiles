@@ -4,6 +4,9 @@ local map = vim.keymap.set
 
 map({ "n" }, "<leader>fk", "<cmd> Telescope keymaps <CR>", { desc = "Find keymaps" })
 
+map({ "n", "v" }, "<leader>S", ":set spell!<CR>", {desc = "Toggle spell"})
+map({ "n", "v" }, "<leader>sp", "1z=", {desc = "Accept first spell suggestion"})
+
 map({ "n" }, "<leader>gd", function()
   if next(require("diffview.lib").views) == nil then
     vim.cmd "DiffviewOpen"
