@@ -88,6 +88,13 @@ map("n", "[c", function()
   end
 end)
 
+map({"n"}, "<leader>sy", function()
+  require("telescope.builtin").symbols {}
+end)
+map({"i"}, "<C-e>", function()
+  -- ♋ 👌
+  require("telescope.builtin").symbols {}
+end)
 --map("i", "<C-k>", "<Up>", { desc = "Move up" })
 --
 ---- multiple modes

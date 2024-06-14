@@ -151,6 +151,10 @@ local plugins = {
     },
     lazy = false,
   },
+  {
+    -- 😀
+    "nvim-telescope/telescope-symbols.nvim",
+  },
 }
 
 return plugins
