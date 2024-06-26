@@ -3,21 +3,32 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
-        "c",
+        "vim",
         "vimdoc",
-        "css",
+
+        -- real programming languages
+        "bash",
+        "c",
         "go",
-        "html",
-        "javascript",
-        "json",
         "lua",
         "nix",
         "python",
         "rust",
+
+        -- webster shit
+        "css",
+        "html",
+        "javascript",
         "svelte",
         "typescript",
-        "vim",
         "vue",
+
+        -- structured text
+        "csv",
+        "json",
+        "xml",
+        "yaml",
+        "markdown",
       },
     },
   },
