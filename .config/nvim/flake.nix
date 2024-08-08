@@ -18,6 +18,10 @@
           # Enable the formatters
           programs.stylua.enable = true;
           programs.nixpkgs-fmt.enable = true;
+          programs.prettier = {
+            excludes = [ "data/*" "flake.lock" "lazy-lock.json" ];
+            enable = true;
+          };
         };
     in
     {
