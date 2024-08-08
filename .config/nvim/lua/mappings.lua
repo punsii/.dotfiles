@@ -88,10 +88,10 @@ map("n", "[c", function()
   end
 end)
 
-map({"n"}, "<leader>sy", function()
+map({ "n" }, "<leader>sy", function()
   require("telescope.builtin").symbols {}
 end)
-map({"i"}, "<C-e>", function()
+map({ "i" }, "<C-e>", function()
   -- ♋ 👌
   require("telescope.builtin").symbols {}
 end)

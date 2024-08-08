@@ -7,7 +7,7 @@ local options = {
     treefmt = {
       inherit = false, -- default if the formatter does not exist yet
       command = "treefmt",
-      args = {"--stdin", "$FILENAME" },
+      args = { "--stdin", "$FILENAME" },
     },
   },
   format_on_save = {

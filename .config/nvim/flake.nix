@@ -19,8 +19,8 @@
           programs.stylua.enable = true;
           programs.nixpkgs-fmt.enable = true;
           programs.prettier = {
-            excludes = [ "data/*" "flake.lock" "lazy-lock.json" ];
             enable = true;
+            excludes = [ "data/*" "flake.lock" "lazy-lock.json" ];
           };
         };
     in
