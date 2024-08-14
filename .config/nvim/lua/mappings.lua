@@ -18,6 +18,7 @@ end, { desc = "Goto Definition" })
 -- working with hunks
 map({ "o", "x" }, "ah", ":<C-U>Gitsigns select_hunk<CR>")
 map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
+
 map({ "n" }, "<leader>gs", function()
   require("gitsigns").stage_hunk()
 end, { desc = "Git stage hunk" })
@@ -27,9 +28,14 @@ end, { desc = "Git stage hunk" })
 map({ "n", "v" }, "<leader>gu", function()
   require("gitsigns").undo_stage_hunk()
 end, { desc = "Git unstage hunk" })
-map({ "n", "v" }, "<leader>gr", function()
+
+map({ "n" }, "<leader>gr", function()
   require("gitsigns").reset_hunk()
 end, { desc = "Git reset hunk" })
+map({ "v" }, "<leader>gr", function()
+  require("gitsigns").reset_hunk { vim.fn.line('.'), vim.fn.line('v') }
+end, { desc = "Git reset hunk" })
+
 map({ "n", "v" }, "<leader>gp", function()
   require("gitsigns").preview_hunk()
 end, { desc = "Git preview hunk" })
