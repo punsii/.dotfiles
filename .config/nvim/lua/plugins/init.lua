@@ -167,6 +167,7 @@ local plugins = {
   },
   {
     "stevearc/conform.nvim",
+    cond = false, -- does currently not work well with treefmt-nix
     ft = { "*" },
     -- Enables format on save
     event = "BufWritePre",
