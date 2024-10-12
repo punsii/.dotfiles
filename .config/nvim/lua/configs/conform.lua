@@ -16,8 +16,7 @@ local options = {
     lsp_fallback = false,
   },
 }
-
-require("conform").setup(options)
+return options
 
 -- XXX formatters that worked well previously
 -- null_ls.builtins.code_actions.statix,

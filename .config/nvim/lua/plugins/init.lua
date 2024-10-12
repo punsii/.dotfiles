@@ -135,23 +135,24 @@ local plugins = {
   --},
   {
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "bash-language-server",
-        "black",
-        "debugpy",
-        "mypy",
-        "nil",
-        "pyright",
-        "ruff-lsp",
-        "rust-analyzer",
-        "stylua",
-        "isort",
-        "prettierd",
-      },
-      -- "vtsls",
-      -- "vue-language-server",
-    },
+    PATH = "append",
+    -- opts = {
+    -- ensure_installed = {
+    -- "bash-language-server",
+    -- "black",
+    -- "debugpy",
+    -- "isort",
+    -- "mypy",
+    -- "nil",
+    -- "prettierd",
+    -- "pyright",
+    -- "ruff-lsp",
+    -- "rust-analyzer",
+    -- "stylua",
+    -- "vtsls",
+    -- "vue-language-server",
+    -- },
+    -- })
   },
   {
     "neovim/nvim-lspconfig",
@@ -190,11 +191,8 @@ local plugins = {
     ft = { "*" },
     -- Enables format on save
     event = "BufWritePre",
-    config = function()
-      require "configs.conform"
-    end,
+    opts = require "configs.conform",
   },
-  -- add this to your lua/plugins.lua, lua/plugins/init.lua,  or the file you keep your other plugins:
   {
     "numToStr/Comment.nvim",
     opts = {

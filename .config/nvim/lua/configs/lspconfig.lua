@@ -9,6 +9,9 @@ local on_init = config.on_init
 local capabilities = config.capabilities
 
 local servers = {
+  "nil_ls",
+  "bashls",
+
   "lua_ls",
 
   "pyright",
@@ -18,8 +21,6 @@ local servers = {
   "volar",
   "html",
   "cssls",
-
-  "nil_ls",
 }
 -- lsps with default config
 for _, lsp in ipairs(servers) do
