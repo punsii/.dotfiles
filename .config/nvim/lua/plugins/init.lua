@@ -182,6 +182,17 @@ local plugins = {
     end,
   },
   {
+    "quarto-dev/quarto-nvim",
+    dependencies = {
+      "jmbuhr/otter.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("quarto").setup {}
+    end,
+    ft = { "quarto" },
+  },
+  {
     "sindrets/diffview.nvim",
     event = "VeryLazy",
   },
