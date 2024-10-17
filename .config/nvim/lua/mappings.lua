@@ -2,6 +2,8 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
+map({ "n", "v" }, "qq", ":qa<CR>", { desc = "Quit" })
+
 map({ "n" }, "<leader>fk", "<cmd> Telescope keymaps <CR>", { desc = "Find keymaps" })
 
 map({ "n", "v" }, "<leader>S", ":set spell!<CR>", { desc = "Toggle spell" })
