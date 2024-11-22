@@ -1,37 +1,5 @@
 local plugins = {
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "vim",
-        "vimdoc",
-
-        -- real programming languages
-        "bash",
-        "c",
-        "go",
-        "lua",
-        "nix",
-        "python",
-        "rust",
-
-        -- webster shit
-        "css",
-        "html",
-        "javascript",
-        "svelte",
-        "typescript",
-        "vue",
-
-        -- structured text
-        "csv",
-        "json",
-        "xml",
-        "yaml",
-        "markdown",
-      },
-    },
-  },
+  -- Git
   {
     "tpope/vim-fugitive",
     cmd = "G",
@@ -56,6 +24,11 @@ local plugins = {
     },
   },
   {
+    "sindrets/diffview.nvim",
+    event = "VeryLazy",
+  },
+  -- Navigation
+  {
     "nvim-tree/nvim-tree.lua",
     opts = {
       git = {
@@ -70,16 +43,6 @@ local plugins = {
         },
       },
     },
-  },
-  {
-    "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup {
-        -- Configuration here, or leave empty to use defaults
-      }
-    end,
   },
   {
     "iamcco/markdown-preview.nvim",
@@ -133,6 +96,8 @@ local plugins = {
   --		require("core.utils").load_mappings("dap_python")
   --	end,
   --},
+
+  -- LSP configuration
   {
     "williamboman/mason.nvim",
     PATH = "append",
@@ -195,6 +160,39 @@ local plugins = {
   {
     "sindrets/diffview.nvim",
     event = "VeryLazy",
+	},
+
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "vimdoc",
+
+        -- real programming languages
+        "bash",
+        "c",
+        "go",
+        "lua",
+        "nix",
+        "python",
+        "rust",
+
+        -- webster shit
+        "css",
+        "html",
+        "javascript",
+        "svelte",
+        "typescript",
+        "vue",
+
+        -- structured text
+        "csv",
+        "json",
+        "xml",
+        "yaml",
+        "markdown",
+      },
+    },
   },
   {
     "stevearc/conform.nvim",
@@ -204,16 +202,27 @@ local plugins = {
     event = "BufWritePre",
     opts = require "configs.conform",
   },
+  -- Text Actions
   {
-    "numToStr/Comment.nvim",
+    "numToStr/Comment.nvim", -- Toggle line comments
     opts = {
       -- add any options here
     },
     lazy = false,
   },
   {
-    -- 😀
-    "nvim-telescope/telescope-symbols.nvim",
+    "kylechui/nvim-surround", -- Actions with braces, quotation marks, etc..
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup {
+        -- Configuration here, or leave empty to use defaults
+      }
+    end,
+  },
+  {
+    "nvim-telescope/telescope-symbols.nvim", -- 😀
+  },
   },
 }
 
