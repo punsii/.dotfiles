@@ -15,7 +15,7 @@ local servers = {
   "lua_ls",
 
   "pyright",
-  "ruff_lsp",
+  "ruff",
 
   --"svelete",
   "volar",
