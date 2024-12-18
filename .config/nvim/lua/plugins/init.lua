@@ -159,9 +159,10 @@ local plugins = {
   {
     "sindrets/diffview.nvim",
     event = "VeryLazy",
-	},
-
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
     opts = {
       ensure_installed = {
         "vim",
@@ -201,7 +202,13 @@ local plugins = {
     event = "BufWritePre",
     opts = require "configs.conform",
   },
-  -- Text Actions
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    event = "VeryLazy",
+    config = function()
+      require "configs.treesitter-textobjects"
+    end,
+  },
   {
     "numToStr/Comment.nvim", -- Toggle line comments
     opts = {
