@@ -210,6 +210,14 @@ local plugins = {
     end,
   },
   {
+    "mawkler/demicolon.nvim",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    },
+    opts = {},
+  },
+  {
     "numToStr/Comment.nvim", -- Toggle line comments
     opts = {
       -- add any options here
