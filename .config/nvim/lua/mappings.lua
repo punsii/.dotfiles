@@ -6,6 +6,18 @@ map({ "n", "v" }, "qq", ":qa<CR>", { desc = "Quit" })
 
 map({ "n" }, "<leader>fk", "<cmd> Telescope keymaps <CR>", { desc = "Find keymaps" })
 
+map(
+  { "n", "v" },
+  "<leader>co",
+  ":LspStop <CR> :IBLDisable <CR> :set signcolumn=no <CR> :set nonumber <CR> ",
+  { desc = "Enable Copy mode" }
+)
+map(
+  { "n", "v" },
+  "<leader>cp",
+  ":LspStart <CR> :IBLEnable <CR> :set signcolumn=yes <CR> :set number <CR> ",
+  { desc = "Disable Copy mode" }
+)
 map({ "n", "v" }, "<leader>S", ":set spell!<CR>", { desc = "Toggle spell" })
 map({ "n", "v" }, "<leader>sp", "1z=", { desc = "Accept first spell suggestion" })
 
