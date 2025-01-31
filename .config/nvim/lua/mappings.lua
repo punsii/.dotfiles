@@ -29,6 +29,26 @@ map({ "n" }, "<leader>gd", function()
   end
 end, { desc = "Goto Definition" })
 
+-- not really a mapping but neccessary for lazygit integration
+function EditLineFromLazygit(file_path, line)
+  local path = vim.fn.expand "%:p"
+  if path == file_path then
+    vim.cmd(tostring(line))
+  else
+    vim.cmd("e " .. file_path)
+    vim.cmd(tostring(line))
+  end
+end
+
+function EditFromLazygit(file_path)
+  local path = vim.fn.expand "%:p"
+  if path == file_path then
+    return
+  else
+    vim.cmd("e " .. file_path)
+  end
+end
+
 -- working with hunks
 map({ "o", "x" }, "ah", ":<C-U>Gitsigns select_hunk<CR>")
 map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
