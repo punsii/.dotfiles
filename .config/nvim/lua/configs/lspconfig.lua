@@ -17,10 +17,14 @@ local servers = {
   "pyright",
   "ruff",
 
-  --"svelete",
-  "volar",
-  "html",
+  -- the javascript ecosystem sucks",
   "cssls",
+  "eslint",
+  "html",
+  "marksman",
+  "mdx_analyzer",
+  "tailwindcss",
+  "volar",
 }
 -- lsps with default config
 for _, lsp in ipairs(servers) do

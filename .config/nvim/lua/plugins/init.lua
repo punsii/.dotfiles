@@ -102,19 +102,30 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "nil",
+
         "bash-language-server",
+        "lua-language-server",
+        "stylua",
+
         "black",
         "debugpy",
+        "isort",
         "mypy",
-        "nil",
         "pyright",
         "ruff",
+        "ruff-lsp",
+
         "rust-analyzer",
-        "stylua",
-        "isort",
+
+        "css-lsp",
+        "eslint_d",
         "prettierd",
+        "tailwindcss-language-server",
+        "typescript-language-server",
       },
       -- "vtsls",
+      -- "vue-language-server",
       -- "vue-language-server",
     },
   },
