@@ -42,6 +42,10 @@ local plugins = {
           },
         },
       },
+      filters = {
+        dotfiles = false,
+        custom = { "^.git$" },
+      },
     },
   },
   {
