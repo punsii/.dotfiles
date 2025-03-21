@@ -17,6 +17,8 @@ local servers = {
   "pyright",
   "ruff",
 
+  "java_language_server",
+
   -- the javascript ecosystem sucks",
   "cssls",
   "eslint",
