@@ -23,19 +23,20 @@ order += "tztime local"
 # order += "volume master"
 
 wireless _first_ {
-  format_up = "W: (%quality at %essid) %ip"
-  format_down = "W: down"
+  format_up = " (%quality at %essid) %ip"
+  format_down = "󰖪 down"
 }
 
 ethernet _first_ {
-  format_up = "E: %ip (%speed)"
-  format_down = "E: down"
+  format_up = "󰈀 %ip (%speed)"
+  format_down = "󰈀 down"
 }
 
 path_exists VPN {
 # path exists when a VPN tunnel launched by nmcli/nm-applet is active
   path = "/proc/sys/net/ipv4/conf/tun0"
-  format = "%title"
+  format = "󱠽 %title"
+  format_down = "󱠾 %title"
 }
 
 
@@ -53,17 +54,17 @@ disk "/" {
 }
 
 load {
-  format = "CPU %1min"
+  format = "󰍛 CPU %1min"
 }
 
 memory {
-  format = "RAM %used / %available"
+  format = " RAM %used / %available"
   threshold_degraded = "1G"
   format_degraded = "MEMORY < %available"
 }
 
 tztime local {
-  format = "🕓 %Y-%m-%d %H:%M:%S"
+  format = "🕓 %d-%m-%Y %H:%M:%S"
 }
 
 volume master {
