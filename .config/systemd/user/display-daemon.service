@@ -1,0 +1,11 @@
+[Unit]
+Description=Display Configuration Daemon
+
+[Service]
+ExecStart=/home/pmenhart/bin/daemons/display_daemon/main.sh
+NotifyAccess=all
+Type=notify
+
+[Unit]
+Wants=graphical-session.target
+After=graphical-session.target

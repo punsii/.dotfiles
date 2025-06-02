@@ -1,0 +1,14 @@
+[Unit]
+Description=Battery Status Daemon
+
+
+[Service]
+
+# Command to execute when the service is started
+ExecStart=python3 /home/pmenhart/bin/daemons/battery_daemon/battery_daemon.py
+Environment=PYTHONUNBUFFERED=1
+Restart=on-failure
+Type=notify
+
+[Install]
+WantedBy=default.target
