@@ -259,6 +259,38 @@ local plugins = {
     "nvim-telescope/telescope-symbols.nvim", -- 😀
   },
   {
+    "nvim-telescope/telescope.nvim",
+    opts = function(_, conf)
+      local telescope = require "telescope"
+      local telescopeConfig = require "telescope.config"
+
+      -- Clone the default Telescope configuration
+      local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
+
+      -- Search hidden files
+      table.insert(vimgrep_arguments, "--hidden")
+      -- Don't search in the '.git' or 'node_modules' directory.
+      table.insert(vimgrep_arguments, "--glob")
+      table.insert(vimgrep_arguments, "!**/.git/*")
+      table.insert(vimgrep_arguments, "--glob")
+      table.insert(vimgrep_arguments, "!**/node_modules/*")
+
+      telescope.setup {
+        defaults = {
+          -- `hidden = true` is not supported in text grep commands.
+          vimgrep_arguments = vimgrep_arguments,
+        },
+        pickers = {
+          find_files = {
+            -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+            find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+          },
+        },
+      }
+      return conf
+    end,
+  },
+  {
     "johmsalas/text-case.nvim",
     dependencies = { "nvim-telescope/telescope.nvim" },
     config = function()
