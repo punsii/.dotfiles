@@ -1,5 +1,11 @@
 require "nvchad.options"
 
+vim.filetype.add {
+  filename = {
+    [".gitlab-ci.yml"] = "yaml.gitlab",
+  },
+}
+
 local o = vim.o
 o.cursorlineopt = "both"
 o.scrolloff = 5

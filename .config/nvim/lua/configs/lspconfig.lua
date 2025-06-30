@@ -12,6 +12,8 @@ local servers = {
   "nil_ls",
   "bashls",
 
+  "gitlab_ci_ls",
+
   "lua_ls",
 
   "pyright",
