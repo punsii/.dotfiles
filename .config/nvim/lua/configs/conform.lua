@@ -3,17 +3,10 @@ local options = {
     -- Use the "*" filetype to run formatters on all filetypes.
     ["*"] = { "treefmt" },
   },
-  formatters = {
-    treefmt = {
-      inherit = false, -- default if the formatter does not exist yet
-      command = "treefmt",
-      args = { "--stdin", "$FILENAME" },
-    },
-  },
   format_on_save = {
     -- These options will be passed to conform.format()
     timeout_ms = 2000,
-    lsp_fallback = false,
+    lsp_format = "never",
   },
 }
 return options
