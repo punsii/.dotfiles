@@ -93,6 +93,8 @@ end, { desc = "Git preview hunk" })
 --		},
 --	},
 --}
+-- XXX Overwrites the default mapping
+map({ "n", "v" }, "<leader>fm", ":silent exec '!treefmt %'<CR>", { desc = "format with treefmt" })
 -- M.general = {
 -- 	n = {
 -- 		["<leader>fm"] = {
