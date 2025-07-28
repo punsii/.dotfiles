@@ -27,7 +27,13 @@ map({ "n" }, "<leader>gd", function()
   else
     vim.cmd "DiffviewClose"
   end
-end, { desc = "Goto Definition" })
+end, { desc = "Toggle Git Diff" })
+
+map({ "n" }, "<leader>q", function()
+  local qf_winid = vim.fn.getqflist({ winid = 0 }).winid
+  local action = qf_winid > 0 and "cclose" or "copen"
+  vim.cmd("botright " .. action)
+end, { desc = "Toggle Quickfix List" })
 
 -- not really a mapping but neccessary for lazygit integration
 function EditLineFromLazygit(file_path, line)

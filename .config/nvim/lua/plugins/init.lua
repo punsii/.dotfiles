@@ -147,6 +147,17 @@ local plugins = {
     end,
   },
   {
+    -- jump to references using '[r' and ']r'
+    "mawkler/refjump.nvim",
+    event = "LspAttach",
+    opts = {},
+  },
+  {
+    "Slotos/telescope-lsp-handlers.nvim",
+    event = "LspAttach",
+    opts = {},
+  },
+  {
     "jmbuhr/otter.nvim",
     config = function()
       local otter = require "otter"
@@ -283,7 +294,7 @@ local plugins = {
         pickers = {
           find_files = {
             -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
-            find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+            find_command = { "rg", "--files", "--sort", "path", "--hidden", "--glob", "!**/.git/*" },
           },
         },
       }
