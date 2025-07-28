@@ -40,11 +40,9 @@ for _, lsp in ipairs(servers) do
 end
 
 lspconfig.rust_analyzer.setup {
+  -- on_init = on_init, -- Do not set on_init! (Will be set by 'settings')
   on_attach = on_attach,
-  on_init = on_init,
   capabilities = capabilities,
-  filetypes = { "rust" },
-  root_dir = util.root_pattern "Cargo.toml",
   settings = {
     ["rust_analyzer"] = {},
   },
