@@ -23,12 +23,12 @@ local servers = {
 
   -- the javascript ecosystem sucks",
   "cssls",
-  "eslint",
+  -- "eslint",
+  "vue_ls",
   "html",
   "marksman",
   "mdx_analyzer",
   "tailwindcss",
-  "volar",
 }
 -- lsps with default config
 for _, lsp in ipairs(servers) do
