@@ -143,6 +143,15 @@ map({ "i" }, "<C-e>", function()
   require("telescope.builtin").symbols {}
 end)
 
+-- repeat last command for all search results
+map({ "n" }, "Q", function()
+  local count = vim.fn.searchcount().total
+  while count > 0 do
+    vim.cmd "normal n."
+    count = count - 1
+  end
+end)
+
 -- treesitter-textobjects
 local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
 -- Repeat movement with ; and ,
