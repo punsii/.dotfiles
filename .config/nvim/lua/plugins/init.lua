@@ -110,6 +110,10 @@ local plugins = {
   -- LSP configuration
   {
     "williamboman/mason.nvim",
+    opts = {},
+  },
+  {
+    "mason-org/mason-lspconfig.nvim",
     opts = {
       ensure_installed = {
         "nil",
@@ -131,12 +135,16 @@ local plugins = {
         "css-lsp",
         "eslint_d",
         "prettierd",
+        "vtsls",
+        "vue-language-server",
         "tailwindcss-language-server",
-        "typescript-language-server",
+        -- "typescript-language-server",
       },
-      -- "vtsls",
-      -- "vue-language-server",
-      -- "vue-language-server",
+      automatic_installation = false,
+    },
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
     },
   },
   {
