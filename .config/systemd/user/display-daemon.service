@@ -2,6 +2,8 @@
 Description=Display Configuration Daemon
 
 [Service]
+Restart=always
+ExecStartPre=/bin/sleep 1
 ExecStart=/home/pmenhart/bin/daemons/display_daemon/main.sh
 NotifyAccess=all
 Type=notify
