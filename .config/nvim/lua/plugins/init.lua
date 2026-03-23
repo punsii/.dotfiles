@@ -30,6 +30,8 @@ local plugins = {
   -- Navigation
   {
     "nvim-tree/nvim-tree.lua",
+    lazy = true,
+    cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeClose" },
     opts = {
       git = {
         enable = true,

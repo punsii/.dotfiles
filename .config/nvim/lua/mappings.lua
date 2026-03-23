@@ -7,18 +7,27 @@ map("n", "<C-p>", "<C-i>", { noremap = true })
 
 map({ "n" }, "<leader>fk", "<cmd> Telescope keymaps <CR>", { desc = "Find keymaps" })
 
-map(
-  { "n", "v" },
-  "<leader>co",
-  ":LspStop <CR> :IBLDisable <CR> :set signcolumn=no <CR> :set nonumber <CR> ",
-  { desc = "Enable Copy mode" }
-)
-map(
-  { "n", "v" },
-  "<leader>cp",
-  ":LspStart <CR> :IBLEnable <CR> :set signcolumn=yes <CR> :set number <CR> ",
-  { desc = "Disable Copy mode" }
-)
+map({ "n", "v" }, "<leader>co", function()
+  local is_copy_mode = not vim.opt.number:get()
+
+  if is_copy_mode then
+    vim.cmd "LspStart"
+    vim.cmd "IBLEnable"
+    vim.opt.signcolumn = "yes"
+    vim.opt.number = true
+
+    local current_win = vim.api.nvim_get_current_win()
+    vim.cmd "NvimTreeOpen"
+    vim.api.nvim_set_current_win(current_win)
+  else
+    vim.cmd "NvimTreeClose"
+    vim.cmd "LspStop"
+    vim.cmd "IBLDisable"
+    vim.opt.signcolumn = "no"
+    vim.opt.number = false
+  end
+end, { desc = "Toggle Copy mode" })
+
 map({ "n", "v" }, "<leader>S", ":set spell!<CR>", { desc = "Toggle spell" })
 map({ "n", "v" }, "<leader>sp", "1z=", { desc = "Accept first spell suggestion" })
 
