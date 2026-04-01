@@ -3,6 +3,7 @@ require "nvchad.mappings"
 local map = vim.keymap.set
 
 map({ "n", "v" }, "qq", ":qa<CR>", { desc = "Quit" })
+map("n", "<C-p>", "<C-i>", { noremap = true })
 
 map({ "n" }, "<leader>fk", "<cmd> Telescope keymaps <CR>", { desc = "Find keymaps" })
 
