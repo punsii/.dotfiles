@@ -11,7 +11,7 @@ map({ "n", "v" }, "<leader>co", function()
   local is_copy_mode = not vim.opt.number:get()
 
   if is_copy_mode then
-    vim.cmd "LspStart"
+    pcall(vim.cmd, "lsp restart")
     vim.cmd "IBLEnable"
     vim.opt.signcolumn = "yes"
     vim.opt.number = true
@@ -21,7 +21,7 @@ map({ "n", "v" }, "<leader>co", function()
     vim.api.nvim_set_current_win(current_win)
   else
     vim.cmd "NvimTreeClose"
-    vim.cmd "LspStop"
+    pcall(vim.cmd, "lsp stop")
     vim.cmd "IBLDisable"
     vim.opt.signcolumn = "no"
     vim.opt.number = false
