@@ -163,7 +163,7 @@ map({ "n" }, "Q", function()
 end)
 
 -- treesitter-textobjects
-local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
+local ts_repeat_move = require "nvim-treesitter-textobjects.repeatable_move"
 -- Repeat movement with ; and ,
 -- ensure ; goes forward and , goes backward regardless of the last direction
 map({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
@@ -179,12 +179,11 @@ map({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F_expr, { expr = true })
 map({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t_expr, { expr = true })
 map({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T_expr, { expr = true })
 
---  make gitsigns.nvim movement repeatable with ; and , keys.
+local repeat_move = require "repeatable_move"
 local gs = require "gitsigns"
--- make sure forward function comes first
-local next_hunk_repeat, prev_hunk_repeat = ts_repeat_move.make_repeatable_move_pair(gs.next_hunk, gs.prev_hunk)
--- Or, use `make_repeatable_move` or `set_last_move` functions for more control. See the code for instructions.
 
+-- make sure forward function comes first
+local next_hunk_repeat, prev_hunk_repeat = repeat_move.make_repeatable_move_pair(gs.next_hunk, gs.prev_hunk)
 map({ "n", "x", "o" }, "]h", next_hunk_repeat)
 map({ "n", "x", "o" }, "[h", prev_hunk_repeat)
 

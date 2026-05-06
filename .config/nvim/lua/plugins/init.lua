@@ -257,19 +257,25 @@ local plugins = {
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
+    branch = "main",
     event = "VeryLazy",
     config = function()
-      require "configs.treesitter-textobjects"
+      require("nvim-treesitter-textobjects").setup {}
     end,
   },
   {
-    "mawkler/demicolon.nvim",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-treesitter/nvim-treesitter-textobjects",
-    },
-    opts = {},
+    "kiyoon/repeatable-move.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
   },
+  -- XXX Reenable as soon as it supports nvim-treesitter-textobjects new main branch
+  -- {
+  --   "mawkler/demicolon.nvim",
+  --   dependencies = {
+  --     "nvim-treesitter/nvim-treesitter",
+  --     "nvim-treesitter/nvim-treesitter-textobjects",
+  --   },
+  --   opts = {},
+  -- },
   {
     "numToStr/Comment.nvim", -- Toggle line comments
     opts = {
