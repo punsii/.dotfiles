@@ -198,6 +198,26 @@ local plugins = {
       otter.activate(languages, completion, diagnostics, tsquery)
     end,
   },
+  -- {
+  --   "ggml-org/llama.vim",
+  --   event = { "BufReadPre", "BufNewFile" },
+  --   init = function()
+  --     vim.g.llama_config = {
+  --       endpoint_fim = "http://127.0.0.1:8118/infill",
+  --       auto_fim = true,
+  --       show_info = 0,
+  --       n_prefix = 10,
+  --       n_suffix = 4,
+  --       n_predict = 6,
+  --       t_max_prompt_ms = 1000,
+  --       t_max_predict_ms = 2000,
+  --       keymap_fim_trigger = "<leader>llf",
+  --       -- keymap_fim_accept_full = "<Tab>",
+  --       -- keymap_fim_accept_line = "<S-Tab>",
+  --       -- keymap_fim_accept_word = "<leader>ll]",
+  --     }
+  --   end,
+  -- },
   {
     "quarto-dev/quarto-nvim",
     dependencies = {
