@@ -69,6 +69,7 @@ local servers = {
   mdx_analyzer = {},
 
   marksman = {},
+  tinymist = {}, --typst
 
   rust_analyzer = {
     -- on_init = on_init, -- Do not set on_init! (Will be set by 'settings')
