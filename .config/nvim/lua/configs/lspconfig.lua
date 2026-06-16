@@ -17,12 +17,12 @@
 
 require("nvchad.configs.lspconfig").defaults()
 
-local vue_language_server_path =
-  "/nix/store/c3w8npbg5av7k9mfxgazwgzg69pqwqv2-vue-language-server-3.1.5/./lib/language-tools/node_modules/.pnpm/node_modules/@vue/language-server"
-
+local bin = vim.uv.fs_realpath(vim.fn.exepath "vue-language-server")
+local root = vim.fs.dirname(vim.fs.dirname(bin))
+local vue_plugin_location = root .. "/lib/language-tools/node_modules/.pnpm/node_modules/@vue/typescript-plugin"
 local vue_plugin = {
   name = "@vue/typescript-plugin",
-  location = vue_language_server_path,
+  location = vue_plugin_location,
   languages = { "vue" },
   configNamespace = "typescript",
 }
