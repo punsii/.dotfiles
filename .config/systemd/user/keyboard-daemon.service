@@ -1,0 +1,11 @@
+[Unit]
+Description=Reapply custom XKB layout on change
+Wants=graphical-session.target
+After=graphical-session.target
+
+[Service]
+ExecStart=%h/bin/daemons/keyboard_daemon/main.sh
+ExecStartPre=/bin/sleep 1
+Restart=always
+NotifyAccess=all
+Type=notify
