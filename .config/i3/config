@@ -246,16 +246,16 @@ for_window [class="TNT" title="TNT-Info"] floating enable
 for_window [class="TNT" title="TNT-Nachfrage"] floating enable
 for_window [window_role="pop-up"] floating enable
 
-workspace $ws1 output primary
-workspace $ws2 output primary
+workspace $ws1 output secondary
+workspace $ws2 output secondary
 workspace $ws3 output secondary
 workspace $ws4 output secondary
 workspace $ws5 output secondary
 workspace $ws6 output secondary
-workspace $ws7 output secondary
-workspace $ws8 output secondary
-workspace $ws9 output secondary
-workspace $ws10 output secondary
+workspace $ws7 output primary
+workspace $ws8 output primary
+workspace $ws9 output primary
+workspace $ws10 output primary
 
 exec google-chrome-stable
 
