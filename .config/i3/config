@@ -236,6 +236,7 @@ bar {
 }
 
 assign [class="Google-chrome"] → $ws1
+assign [class="firefox"] → $ws1
 assign [class="tbrows"] → $ws2
 assign [class="Tnt" title="TNT-Main"] → $ws6
 assign [class="Bitwarden"] → $ws10
@@ -257,5 +258,5 @@ workspace $ws8 output primary
 workspace $ws9 output primary
 workspace $ws10 output primary
 
-exec google-chrome-stable
-
+# startup apps
+exec i3-msg 'workspace 2; exec /usr/bin/firefox'
