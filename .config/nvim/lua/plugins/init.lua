@@ -61,6 +61,7 @@ local plugins = {
       -- Your setup opts here
     },
   },
+  { "nvim-treesitter/nvim-treesitter", branch = "main" },
   {
     "davidmh/mdx.nvim",
     config = true,
