@@ -65,7 +65,17 @@ local servers = {
     filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
   },
   html = {},
-  tailwindcss = {},
+  tailwindcss = {
+    {
+      "html",
+      "mdx",
+      "css",
+      "javascript",
+      "typescript",
+      "vue",
+      "svelte",
+    },
+  },
   mdx_analyzer = {},
 
   marksman = {},
